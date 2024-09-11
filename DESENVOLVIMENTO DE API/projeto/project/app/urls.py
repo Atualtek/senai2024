@@ -3,6 +3,10 @@ from . import views
 
 urlpatterns = [
     path('', views.ItemListView.as_view(), name='item-list'),
+    path('frontend', views.FrontEndTemplate, name='frontend'),
+    path('frontend2', views.FrontEnd2Template, name='frontend2'),
+    path('frontend3', views.FrontEnd3Template, name='frontend3'),
+    path('feeds', views.FeedsNews, name='feeds'),
     path('item/<int:pk>/', views.ItemDetailView.as_view(), name='item-detail'),
     path('item/new/', views.ItemCreateView.as_view(), name='item-create'),  
     path('item/<int:pk>/edit/', views.ItemUpdateView.as_view(), name='item-edit'),
@@ -19,5 +23,10 @@ urlpatterns = [
     path('formulario/<int:pk>/', views.FormDetailView, name='form-detail'),
     path('formulario/<int:pk>/edit/', views.FormUpdateView, name='form-edit'),
     path('formulario/<int:pk>/delete/', views.FormDeleteView, name='form-delete'),
-    
+    path('frontend/javascript/localstorage', views.FJLocalstorage, name='FJLocalstorage'),   
+    path('frontend/javascript/splitpop', views.FJSplitpop, name='FJSplitpop'),  
+    path('frontend/javascript/noticiafeed', views.FJNoticiafeed, name='FJNoticiafeed'), 
+    path('frontend/javascript/tasks', views.FJTasks , name='FJTasks'), 
+    path('frontend/javascript/cart', views.FJCart , name='FJCart'), 
+     path('bootstrap', views.Bootstrap , name='Bootstrap'), 
 ]

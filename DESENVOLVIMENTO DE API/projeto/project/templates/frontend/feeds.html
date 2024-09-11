@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feed de Notícias do G1</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .feed-container { max-width: 600px; margin: auto; }
+        .feed-item { border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .feed-title { font-weight: bold; font-size: 1.2em; }
+        .feed-description { margin: 5px 0; }
+        .feed-link { color: #007bff; text-decoration: none; }
+        .feed-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="feed-container" id="feed">
+        <!-- Os itens do feed serão inseridos aqui -->
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const feedContainer = document.getElementById('feed');
+            const timestamp = new Date().getTime(); // Gera um timestamp único
+            const feedUrl = `https://g1.globo.com/rss/g1/?t=${timestamp}`; 
+            //const feedUrl = 'https://g1.globo.com/rss/g1/';
+
+          
+
+            // Função para criar elementos do feed
+            function createFeedItem(item) {
+                const feedItem = document.createElement('div');
+                feedItem.className = 'feed-item';
+                feedItem.style.ofervlow =  'hidden';
+                feedItem.style.textAlign = 'justify';
+
+                const title = document.createElement('div');
+                title.className = 'feed-title';
+                title.textContent = item.title;
+
+                //função para remover o linkdo texto
+                const description = document.createElement('div');
+                description.className = 'feed-description';
+                let text = item.description.split('<br>');
+                console.log(text);
+                if(text.length > 1){
+                description.textContent = truncateText(text[1], 300);
+                }else{
+                description.textContent = truncateText(item.description, 300);
+                }
+
+
+                const link = document.createElement('a');
+                link.className = 'feed-link';
+                //link.href = item.link;
+                link.target = '_blank';
+                link.textContent = 'Leia mais';
+               
+
+                //função para tratar a imagem
+                let image = document.createElement('img');
+                image.className = 'imagem';
+                let verificarimagem = item.description.split('src="');
+                let imagem = item.description.split('src="').pop().split('">')[0];
+                image.setAttribute('src', imagem);
+                image.setAttribute('width', "100%");                     
+                
+                //Criar um evento click para direcionar a noticia para outra página própria passando dados com localstorage
+                link.addEventListener('click',() => {
+                    localStorage.setItem('title', item.title);
+                    localStorage.setItem('image', imagem);
+                    localStorage.setItem('description', text.length > 1 ? text[1] : item.description);
+                    window.location.href = "{% url 'FJNoticiafeed' %}";
+                });               
+
+
+                feedItem.appendChild(title);
+                if(verificarimagem.length > 1){
+                feedItem.appendChild(image);
+                }
+                feedItem.appendChild(description);
+                feedItem.appendChild(link);    
+                return feedItem;
+            }
+
+            // Função para carregar o feed
+            function loadFeed() {
+                fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        let firstitem = true;
+                        data.items.forEach(item => {
+                            //if(firstitem){
+                            const feedItem = createFeedItem(item);
+                            feedContainer.appendChild(feedItem);
+                            firstitem = false;
+                            //}
+                        });
+                    })
+                    .catch(error => console.error('Erro ao carregar o feed:', error));
+            }
+            // Carrega o feed ao inicializar a página
+            loadFeed();            
+            setInterval(function() {
+                window.location.reload(true);
+            }, 60000);
+
+              //Função para limitar a quantidade de caracteres
+              function truncateText(text, maxLength) {                
+                if (text.length > maxLength) {
+                    return text.slice(0, maxLength) + ' ...';
+                }
+                return text;
+            }
+
+        });
+        
+
+     
+    </script>
+</body>
+</html>

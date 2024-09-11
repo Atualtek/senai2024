@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+
+    <h1>Meu titulo tamanho 1</h1>
+    <h2>Meu titulo tamanho 1</h2>
+    <h3>Meu titulo tamanho 1</h3>
+    <h4>Meu titulo tamanho 1</h4>
+    <h5>Meu titulo tamanho 1</h5>
+    <h6>Meu titulo tamanho 1</h6>
+
+    <ol> 
+        <li>DEscriçõa 1</li>
+        <li>DEscrição 2</ii>
+    </ol>
+    <ul>
+        <li>lista 1 desordenada</li>
+        <li> Lista 2 DEsordenada</li>
+    </ul>
+
+    <table class="row">
+        <div class="col-md-12">
+            <h1>Exemplo de Tabela</h1>
+        </div>
+        <thead>
+            <tr>
+                <th scope="col">imagem</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Preço</th>
+                <th scope="col">Estoque</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+                <tr>
+                    <td><img></img</td>
+                    <td>Produto 1</td>
+                    <td> R$16,85</td>
+                    <td> 18 peças </td>
+                    <td> 
+                        <button class="btn btn-xs btn-primary"> botao</button>
+                    </td>
+                </tr>  
+                              
+        </tbody>
+    </table>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum tincidunt pellentesque. Praesent ornare odio vel lectus convallis, a luctus lacus laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum tincidunt pellentesque. Praesent ornare odio vel lectus convallis, a luctus lacus laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;.</p>
+
+    <div class="row">frontend
+        <div class="col-md-12">
+            <h1>Tabela do exercício primeiro horário</h1>
+        </div>
+        <div class="col-md-12">
+            <table border=1>
+                <tr>
+                  <th rowspan=3>Day</th>
+                  <th colspan=3>Seminar</th>
+                </tr>
+                <tr>
+                  <th colspan=2>Schedule</th>
+                  <th rowspan=2>Topic</th>
+                </tr>
+                <tr>
+                  <th>Begin</th>
+                  <th>End</th>
+                </tr>
+                <tr>
+                  <td rowspan=2>Monday</td>
+                  <td style="background-color: #F8F6D1;" rowspan=2>8:00 a.m.</td>
+                  <td style="background-color:#BFB4F8;" rowspan=2>5:00 p.m.</td>
+                  <td>Introduction to XML</td>
+                </tr>
+                <tr>                  
+                  <td>Validity: DTD and Relax NG</td>
+                </tr>
+                <tr>
+                  <td rowspan=3>Tuesday</td>
+                  <td style="background-color: #F8F6D1;">8:00 a.m.</td>
+                  <td style="background-color: #F8F6D1;">11:00 a.m.</td>
+                  <td rowspan=2>XPath</td>
+                </tr>
+                <tr>
+                  <td style="background-color: #F8F6D1;">11:00 a.m.</td>
+                  <td style="background-color: #C7F8D8;">2:00 p.m.</td>
+                </tr>
+                <tr>
+                  <td style="background-color: #C7F8D8;">2:00 p.m.</td>
+                  <td style="background-color:#BFB4F8;">5:00 p.m.</td>
+                  <td rowspan=1>XSL Transformations</td>
+                </tr>
+                <tr>
+                  <td>Wednesday</td>
+                  <td style="background-color: #F8F6D1;">8:00 a.m.</td>
+                  <td style="background-color: #C7F8D8;">12:00 p.m.</td>
+                  <td>XSL Formatting Objects</td>
+                </tr>
+              </table>
+              <style>
+                tr{
+                    border: 1px solid black;
+                }
+                th{
+                    border: 1px solid black;
+                }
+                td{
+                    border: 1px solid black;
+                }
+              </style>
+        </div>
+    </div>
+    <div id="titulo">
+      <h1> Meu título dentro de um  HTML</h1>
+    </div>
+
+
+    <div class="row" style="padding-bottom: 30px;">
+        <div class="col-md-12" id="paragrafos">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum tincidunt pellentesque. Praesent ornare odio vel lectus convallis, a luctus lacus laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fermentum tincidunt pellentesque. Praesent ornare odio vel lectus convallis, a luctus lacus laoreet. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;.</p>
+
+
+        </div>
+      
+      <div class="row">
+        <div class="col-md-4">
+          <a href="https://www.google.com.br" target="_blank" id="linkgoogle"> link </a></a>
+          <a href="https://www.google.com.br" target="_blank" > link </a></a>
+          <a href="https://www.google.com.br" target="_blank" > link </a></a>
+
+         
+        </div>
+        <div class="col-md-4">
+            <input type="text" name="qualquer" id="inputtest">
+            <input type="text" name="qualquer2" id="duplicar">
+        </div>
+      </div>
+    </div>
+      
+<div id="chessboard"></div>
+<button id="alterar">Alterar Cores</button>
+<button id="voltar"> Voltar pretas </button>
+
+<div class="row">
+</hr>
+<h1>Jogo da Velha</h1>
+<div class="game-container">
+  <h1>Jogo da Velha</h1>
+  <div class="grid">
+      <div class="cell" data-index="0"></div>
+      <div class="cell" data-index="1"></div>
+      <div class="cell" data-index="2"></div>
+      <div class="cell" data-index="3"></div>
+      <div class="cell" data-index="4"></div>
+      <div class="cell" data-index="5"></div>
+      <div class="cell" data-index="6"></div>
+      <div class="cell" data-index="7"></div>
+      <div class="cell" data-index="8"></div>
+  </div>
+  <button id="reset">Reiniciar Jogo</button>
+  <p id="status"></p>
+</div>
+</div>
+ 
+<a href="www.google.com" id="linktest">
+    <button id="button_test1" type="submit"> teste1 </button>
+    <button id="button_test2" type="submit"> teste2 </button>
+    <button id="button_test3" type="submit"> teste3 </button>
+</a>
+
+<input id="teste1" value="maria josé ">
+
+<div class="row" style="padding-top: 3%;">
+  <form id="contactForm">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" ><br><br>
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" ><br><br>
+    <button type="submit">Enviar</button>
+  </form>
+  <p id="message"></p>
+</div>
+
+<style>
+        #chessboard{
+          display: grid;
+          grid-template-columns: repeat(8,50px);
+          grid-template-rows: repeat(8, 50px);
+          border: 2px solid #000;
+          box-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
+          margin-bottom: 20px;
+          max-width: 404px;
+        }
+        .square{
+          width: 50px;
+          height: 50px;
+        }
+        .white{
+          background-color: white;
+        }
+        .black{
+          background-color: black;
+        }
+
+        /* <!--css do jogo da velha --> */
+        .game-container {
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2em;
+            cursor: pointer;
+            border: 2px solid #333;
+        }
+
+        #reset {
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        #status {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+</style>      
+<script>
+     
+const chessboard = document.getElementById('chessboard');
+const botao = document.getElementById('alterar');
+const bvoltar = document.getElementById('voltar');
+
+
+function criarTabuleiro() {
+  for( let row = 0; row < 8; row++ ){
+      for( let col = 0; col < 8; col++ ){
+        const square = document.createElement('div');
+        square.classList.add('square');
+        let data = row + col;
+          if((row + col) % 2 === 0 ){            
+            square.classList.add('white');
+            square.setAttribute('data-data', data);
+            square.classList.add('rel');
+          }else{
+            square.classList.add('black');  
+            square.setAttribute('data-data', data);
+            square.classList.add('rel');
+          } 
+          chessboard.appendChild(square);     
+      }
+  }
+}
+
+const arcoiris = ['#FF0000', '#FF7F00', '#FFFF00', '#00FF00', '#0000FF', '#4B0082', '#9400D3'];
+function alterarCores(){
+  const blacksquare = document.querySelectorAll('.black');
+  blacksquare.forEach( (square, index) => {     
+     square.style.backgroundColor = arcoiris[index % arcoiris.length];
+  });   
+}
+
+function voltar(){
+  const blacksquare = document.querySelectorAll('.black');
+  blacksquare.forEach( (square ) => {
+      square.style.backgroundColor = "black";
+  });   
+}
+
+criarTabuleiro();
+botao.addEventListener('click', alterarCores);
+bvoltar.addEventListener('mouseover', voltar);
+
+
+var squares = document.querySelectorAll('.rel');
+squares.forEach( function(square){
+  square.addEventListener("click", function(event) {
+      var data = this.getAttribute("data-data");
+      alert('o valor deste quadrado é '+ data + '.');
+  });
+});
+
+
+
+    //let nota = "cento e vinte e cinco objetos";
+
+   // console.log(typeof nota);
+
+    // if (nota.length >= 45) {
+    // console.log('Excelente');
+    // } else if (nota.length >= 15) {
+    // console.log('Aprovado');
+    // } else {
+    // console.log('Reprovado');
+    // }
+
+
+    //Atividade passada dia 21/09
+    //Parte 1
+
+// function Escopo() {
+//     var variavelVar = "Variavel var";
+//     let variavelLet = "Variavel let";
+//     const variavelConst = "constante";
+
+//     console.log("Variáveis em Escopo Local:");
+//     console.log(variavelVar);  
+//     console.log(variavelLet);  
+//     console.log(variavelConst); 
+// }
+
+//     Escopo();
+//     console.log("Renderizando fora do Escopo:");
+//     //console.log(variavelVar);  
+//     //console.log(variavelLet);  
+//    // console.log(variavelConst); 
+
+
+    //Parte 2
+    //console.log(variavelVar);  // undefined (hoisting)
+    //console.log(variavelLet);  // ReferenceError (não ocorre hoisting)
+    //console.log(variavelConst); // ReferenceError (não ocorre hoisting)
+
+    //var variavelVar = "Variável var";
+    //let variavelLet = "Variável let";
+    //console.log(variavelLet);
+    //const variavelConst = "Variável const";
+
+    //parte 3
+    // const meuObjeto = { nome: "João" };
+    // const meuArray = [1, 2, 3];   
+    // meuObjeto.nome = "Maria";  // Funciona, pois estamos mudando a propriedade interna
+    // meuArray.push(4);  // Funciona, pois estamos mudando o conteúdo interno
+     
+    // var teste = "teste1";
+    // console.log(teste);
+
+    // var teste = "teste2";
+    // console.log(teste);
+
+    // console.log(meuObjeto);  // { nome: "Maria" }
+    // console.log(meuArray);   // [1, 2, 3, 4]
+
+    //Desafio Finalrtr
+    // console.log("Usando var:");
+    // for (var i = 0; i < 3; i++) {
+    //     setTimeout(function() {
+    //         console.log(i);
+    //     }, 1000);
+    // }
+
+    // console.log("Usando let:");
+    // for (let j = 0; j < 3; j++) {
+    //     setTimeout(function() {
+    //         console.log(j);
+    //     }, 1000);
+    // }
+
+    // let contador = 0;
+    // while(contador < 5){
+      
+    //   console.log(contador);
+     
+    // }
+
+    // let titulo = document.getElementById('titulo');
+    // console.log(titulo);
+
+    //Atividade sugerida 22 de Agosto
+    // function Media(nota1, nota2, nota3){      
+    //    var nota1 = (nota1 == null) ? 0 : nota1;
+    //    var nota2 = (nota2 == null) ? 0 : nota2;
+    //    var nota3 = (nota3 == null) ? 0 : nota3;
+    //   let media = (nota1+nota2+nota3)/3;
+    //   return media;
+    // }
+
+    // function Desempenho(media){
+    //   if(media >= 7){
+    //     return "Aprovado";
+    //   }else if(media >=5 ){
+    //     return "em recuperação";
+    //   }else{
+    //     return "reprovado";
+    //   }
+    // }
+
+    // let notasAlunos = Media(9,8);
+    // console.log("A Média do aluno é: " + notasAlunos);
+    // console.log("O Desempenho do aluno foi:" + Desempenho(notasAlunos));
+
+    // let paragrafos = document.querySelectorAll('p');
+    // paragrafos.forEach( paragrafo =>  {
+    //   for(let i = 0; i < paragrafos.length; i++){
+    //       if(i == 4){
+    //         let quarto_paragrafo = paragrafos[i];
+    //         quarto_paragrafo.style.border = "2px solid red";
+    //       }
+    //     }
+    // });
+    // paragrafos.forEach((paragrafo, index) => {
+    //     if (index === 7) { // O índice 3 corresponde ao quarto parágrafo
+    //         paragrafo.style.border = "2px solid red";
+    //     }
+    // });
+
+    //  let cores = ['black', 'green', "red", 'white', "blue"];
+    //  let numero = [1, 2, 3, 4, 5, 6, 7, 8];
+    //  paragrafos.forEach((paragrafo, index) => {        
+    //       var numindex = numero[index % numero.length];
+    //       let resultado =  10 + numindex;
+    //       console.log(resultado);
+              
+    //  });
+    // let link =  document.getElementById('linkgoogle');
+    //  link.addEventListener('click', function(event){
+    //      event.preventDefault();
+    // });
+
+    // let paragrafos = document.getElementById("paragrafos");
+    // let novo_paragrafo = document.createElement('p');
+    // novo_paragrafo.innerText = "novo paragrafo criado com javascript";       
+    // let primeiro_paragrafo = paragrafos.querySelectorAll('p')[0];  
+    // paragrafos.insertBefore(novo_paragrafo, primeiro_paragrafo);
+
+  let input = document.getElementById('inputtest');   
+  input.addEventListener('input', function(){
+    let input2 = document.getElementById('duplicar');
+    let value = this.value;
+    input2.value = value;  
+  }); 
+
+
+ 
+
+  //Código para implementação de um jogo da velha
+  const cells = document.querySelectorAll('.cell');
+  const statusText = document.getElementById('status');
+  const resetButton = document.getElementById('reset');
+  let currentPlayer = 'X';
+  let gameBoard = ['', '', '', '', '', '', '', '', ''];
+  let isGameActive = true;
+
+  const winningConditions = [
+      [0, 1, 2],
+      [3, 4, 5],
+      [6, 7, 8],
+      [0, 3, 6],
+      [1, 4, 7],
+      [2, 5, 8],
+      [0, 4, 8],
+      [2, 4, 6]
+  ];
+
+  function handleCellClick(event) {
+      const clickedCell = event.target;
+      const clickedCellIndex = parseInt(clickedCell.getAttribute('data-index'));
+
+      if (gameBoard[clickedCellIndex] !== '' || !isGameActive) {
+          return;
+      }
+
+      gameBoard[clickedCellIndex] = currentPlayer;
+      clickedCell.textContent = currentPlayer;
+
+      checkWinner();
+  }
+
+  function checkWinner() {
+      let roundWon = false;
+      for (let i = 0; i < winningConditions.length; i++) {
+          const [a, b, c] = winningConditions[i];
+          if (gameBoard[a] && gameBoard[a] === gameBoard[b] && gameBoard[a] === gameBoard[c]) {
+              roundWon = true;
+              break;
+          }
+      }
+
+      if (roundWon) {
+          statusText.textContent = `${currentPlayer} venceu!`;
+          isGameActive = false;
+          return;
+      }
+
+      if (!gameBoard.includes('')) {
+          statusText.textContent = 'Empate!';
+          isGameActive = false;
+          return;
+      }
+
+      currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+  }
+
+  function resetGame() {
+      currentPlayer = 'X';
+      gameBoard = ['', '', '', '', '', '', '', '', ''];
+      isGameActive = true;
+      statusText.textContent = '';
+      cells.forEach(cell => cell.textContent = '');
+  }
+
+  cells.forEach(cell => cell.addEventListener('click', handleCellClick));
+  resetButton.addEventListener('click', resetGame);
+
+
+  let inputtest = document.getElementById('teste1');
+  let linktest1 = document.getElementById('linktest');
+  linktest1.addEventListener('click', function(event) {
+      event.preventDefault();
+  });
+
+
+//   document.getElementById('contactForm').addEventListener('submit', function(event) {
+//     // Evita a submissão padrão do formulário
+//     event.preventDefault();
+    
+//     // Chama a função de validação do formulário
+//     validateForm();
+// });
+
+// function validateForm() {
+//     const name = document.getElementById('name').value;
+//     const email = document.getElementById('email').value;
+//     const message = document.getElementById('message');
+
+//     // Verifica se os campos estão preenchidos
+//     if (name === '' || email === '') {
+//         message.innerText = 'Por favor, preencha todos os campos.';
+//         message.style.color = 'red';
+//     } else {
+//         message.innerText = 'Aguarde, enviando.....';
+//         message.style.color = 'blue';
+//         setTimeout(() => {
+           
+//             message.innerText = 'Formulário enviado com sucesso!';
+//             message.style.color = 'green';
+//         }, 2000);
+//  }
+// }
+
+
+
+//Explicando promisses, async e await
+
+document.getElementById('contactForm').addEventListener('submit', async function(event) {
+    // Evita a submissão padrão do formulário
+    event.preventDefault();    
+    // Chama a função de validação do formulário
+    await validateForm();
+});            
+
+async function validateForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message');
+
+    // Verifica se os campos estão preenchidos
+    if (name === '' || email === '') {
+        message.innerText = 'Por favor, preencha todos os campos.';
+        message.style.color = 'red';
+    } else {
+        message.innerText = 'Validando...';
+        message.style.color = 'blue';
+
+        // Simula uma operação assíncrona, como uma requisição a um servidor
+        try {
+            let data = await sendDataToServer({ name, email });          
+           
+            message.innerText = data;
+            message.style.color = 'green';
+        } catch (error) {
+            message.innerText = 'Erro ao enviar o formulário.';
+            message.style.color = 'red';
+        }
+    }
+}
+
+// Função que simula o envio de dados para um servidor
+async function sendDataToServer(data) {
+    // Simula um atraso de 2 segundos, como se estivesse aguardando uma resposta de uma API
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // Simula uma resposta bem-sucedida
+            resolve('Dados enviados');
+            // Para simular um erro, você pode usar: reject('Erro no servidor');
+        }, 2000);
+    });
+}
+
+
+///explicação
+
+// 1. Promises:
+// Imagine que você pediu uma pizza por telefone.
+// A pizzaria diz que vai demorar 30 minutos para entregar. 
+//A pizza ainda não está pronta, mas você sabe que vai receber uma resposta: 
+//ou a pizza será entregue com sucesso (você estará feliz), 
+//ou algo dará errado e você não receberá a pizza (você ficará frustrado).
+
+// Uma promise em JavaScript funciona exatamente assim:
+
+// Pending (pendente): 
+//Quando você faz o pedido, a pizza está em processo de ser feita,
+// ou seja, a promessa está "pendente".
+// Fulfilled (cumprida): 
+// Se a pizza for entregue corretamente, 
+//a promessa foi "cumprida" e você recebe a pizza.
+// Rejected (rejeitada): 
+//Se algo der errado e a pizza não for entregue, a promessa foi "rejeitada".
+
+
+
+// Aqui está um exemplo básico de como uma promise funciona em código:
+
+
+const pizzaPromise = new Promise((resolve, reject) => {
+    let pizzaReady = true; // Simulando que a pizza está pronta
+
+    if (pizzaReady) {
+        resolve('Pizza pronta para entregue!');
+    } else {
+        reject('Erro na preparação e entrega da pizza.');
+    }
+});
+
+// pizzaPromise
+//     .then(message => console.log(message))  // Se a promise for cumprida, executa isso
+//     .catch(error => console.log(error));    // Se a promise for rejeitada, executa isso
+// 2. async e await:
+
+
+// Agora, imagine que você está muito ocupado em casa e, enquanto espera a pizza,
+// decide arrumar a sala. No entanto, você não quer começar a comer
+// enquanto não arrumou a sala, então faz o seguinte:
+
+// async: Quando você declara que vai arrumar a sala, 
+// você quer fazer isso de forma que o processo de arrumar seja assíncrono, 
+// ou seja, não vai interromper a espera pela pizza. 
+
+//Em JavaScript, isso é feito ao declarar uma função como async. 
+//Isso significa que a função pode lidar com operações que demoram algum tempo
+// para completar sem bloquear o resto do código.
+
+// await: Agora, para garantir que você não comece a fazer outra coisa até a pizza chegar, 
+// você usa o await. Isso faz com que você espere a pizza ser entregue antes de continuar
+// com qualquer outra atividade.
+
+//Em JavaScript, o await pausa a execução da função assíncrona até que a promise seja cumprida ou rejeitada.
+
+// Aqui está como isso funcionaria no código:
+
+
+// Copiar código
+async function orderPizza() {
+    try {
+        const message = await pizzaPromise; // Espera a pizza ser entregue
+        console.log(message);  // Só executa isso depois que a pizza for entregue
+    } catch (error) {
+        console.log(error);  // Se der algo errado, executa isso
+    }
+}
+
+orderPizza();  // Chama a função que faz o pedido
+// Resumindo:
+// Promises são como promessas na vida real: algo que vai acontecer no futuro. 
+//Elas podem ser cumpridas (quando tudo dá certo) ou rejeitadas (quando algo dá errado).
+
+// async é uma forma de dizer que uma função vai lidar com coisas que podem demorar para acontecer,
+// mas sem travar o resto do código.
+
+// await é como pausar uma função até que uma promise seja resolvida. 
+//Assim, o código só continua depois que a promessa é cumprida ou rejeitada.
+// Essa combinação de async e await permite escrever código assíncrono de uma forma que parece mais com código síncrono, o que torna mais fácil de entender e gerenciar.
+
+ </script>
+ {% endblock %}

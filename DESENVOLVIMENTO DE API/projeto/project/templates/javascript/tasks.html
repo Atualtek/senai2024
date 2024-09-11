@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas</title>
+    <style>
+       
+        .task-list {
+            list-style: none;
+            padding: 0;
+        }
+        .task-item {
+            /*display: flex;*/
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .task-item.completed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<body>
+    <div class="container">
+        <div class="row">
+            <h1>Gerenciador de Tarefas</h1>
+        </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Nova Tarefa" id="new-task">
+            <div class="input-group-append">
+                <button id="add-task" class="btn btn-md btn-danger">Adicionar Tarefa</button>
+            </div>
+          </div>
+          <table class="table table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" style="width: 70%;">Tarefa</th>
+                    <th scope="col">Ações</th>
+                </tr>    
+            </thead>
+            <tbody id="task-list" class="task-list">                
+            </tbody>
+          </table>
+    </div>
+</body>
+<script>
+let teste = localStorage.getItem('username');
+console.log(teste);
+document.addEventListener('DOMContentLoaded', () => {
+            const taskInput = document.getElementById('new-task');
+            const addTaskButton = document.getElementById('add-task');
+            const taskList = document.getElementById('task-list');
+
+            // Carregar tarefas do localStorage ao carregar a página
+            loadTasks();
+
+            addTaskButton.addEventListener('click', () => {
+                const taskText = taskInput.value.trim();
+                if (taskText !== '') {
+                    addTask(taskText);
+                    taskInput.value = ''; // Limpar o campo de input
+                }
+            });
+
+            function addTask(text, completed = false) {
+                const taskItem = document.createElement('tr');
+                taskItem.className = 'task-item';
+                if (completed) {
+                    taskItem.classList.add('completed');
+                }
+
+                const taskContent = document.createElement('td');
+                taskContent.style.width = '100px';
+                taskContent.textContent = text;
+
+                const actions = document.createElement('td');
+
+                const completeButton = document.createElement('button');
+                completeButton.textContent = 'Concluir';
+                completeButton.classList.add('btn');
+                completeButton.classList.add('btn-md');
+                completeButton.classList.add('btn-success');
+
+                completeButton.addEventListener('click', () => {
+                    taskItem.classList.toggle('completed');
+                    saveTasks();
+                });
+
+                const editButton = document.createElement('button');
+                editButton.textContent = 'Editar';
+                editButton.classList.add('btn');
+                editButton.classList.add('btn-md');
+                editButton.classList.add('btn-warning');
+                editButton.addEventListener('click', () => {
+                    const newText = prompt('Editar tarefa:', taskContent.textContent);
+                    if (newText) {
+                        taskContent.textContent = newText;
+                        saveTasks();
+                    }
+                });
+
+                const deleteButton = document.createElement('button');
+                deleteButton.classList.add('btn');
+                deleteButton.classList.add('btn-md');
+                deleteButton.classList.add('btn-danger');
+                deleteButton.textContent = 'Excluir';
+                deleteButton.addEventListener('click', () => {
+                    taskItem.remove();
+                    saveTasks();
+                });
+
+                actions.appendChild(completeButton);
+                actions.appendChild(editButton);
+                actions.appendChild(deleteButton);
+                taskItem.appendChild(taskContent);
+                taskItem.appendChild(actions);
+                taskList.appendChild(taskItem);
+
+                saveTasks();
+            }
+
+            function saveTasks() {
+                const tasks = [];
+                taskList.querySelectorAll('.task-item').forEach(taskItem => {
+                    tasks.push({
+                        text: taskItem.querySelector('td').textContent,
+                        completed: taskItem.classList.contains('completed')
+                    });
+                });
+                localStorage.setItem('tasks', JSON.stringify(tasks));                
+            }
+
+            function loadTasks() {
+                const savedTasks = localStorage.getItem('tasks');
+                if (savedTasks) {
+                    JSON.parse(savedTasks).forEach(task => {
+                        addTask(task.text, task.completed);
+                    });
+                }
+            }
+            
+});
+</script>
+</html>

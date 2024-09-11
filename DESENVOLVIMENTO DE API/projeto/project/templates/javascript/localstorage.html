@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block content %}
+    <style>
+     
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #007bff;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+
+    <h1>Entendendo o localStorage</h1>
+    <p>
+        O <code>localStorage</code> é uma das funcionalidades da <strong>Web Storage API</strong> no JavaScript, que permite que você armazene dados diretamente no navegador do usuário. Ele é útil para armazenar informações que você deseja que persistam mesmo após o usuário fechar e reabrir o navegador.
+    </p>
+
+    <h2>Principais Características do <code>localStorage</code>:</h2>
+    <ul>
+        <li>
+            <strong>Persistência de Dados:</strong> Os dados armazenados no <code>localStorage</code> persistem indefinidamente até que sejam explicitamente removidos. Isso significa que, mesmo que o usuário feche e reabra o navegador, os dados continuarão disponíveis.
+        </li>
+        <li>
+            <strong>Capacidade de Armazenamento:</strong> A capacidade de armazenamento do <code>localStorage</code> é relativamente grande, variando entre 5 a 10 MB por origem (domínio), dependendo do navegador.
+        </li>
+        <li>
+            <strong>Armazenamento de Dados em Pares Chave-Valor:</strong> O <code>localStorage</code> armazena dados como pares chave-valor, onde você pode associar uma chave única a um valor específico e recuperar esse valor posteriormente usando a chave.
+        </li>
+        <li>
+            <strong>Disponível Apenas no Cliente:</strong> Os dados armazenados no <code>localStorage</code> estão disponíveis apenas no lado do cliente, ou seja, no navegador.
+        </li>
+    </ul>
+
+    <h2>Principais Métodos:</h2>
+    <ul>
+        <li><code>localStorage.setItem(key, value)</code>: Armazena um valor sob uma chave específica.</li>
+        <li><code>localStorage.getItem(key)</code>: Recupera o valor associado a uma chave específica.</li>
+        <li><code>localStorage.removeItem(key)</code>: Remove o item associado a uma chave específica.</li>
+        <li><code>localStorage.clear()</code>: Remove todos os itens armazenados no <code>localStorage</code>.</li>
+        <li><code>localStorage.length</code>: Retorna o número de pares chave-valor armazenados.</li>
+    </ul>
+
+    <h2>Exemplo Prático:</h2>
+    <pre>
+        <code>
+// Armazenar dados
+localStorage.setItem('username', 'João');
+
+// Recuperar dados
+const user = localStorage.getItem('username');
+console.log(user); // Saída: 'João'
+
+// Remover dados
+localStorage.removeItem('username');
+
+// Limpar todo o localStorage
+localStorage.clear();
+        </code>
+    </pre>
+
+    <h2>Quando Usar:</h2>
+    <p>
+        O <code>localStorage</code> é ideal para armazenar dados que precisam persistir por longos períodos e que são específicos ao usuário, como preferências de tema, informações sobre a sessão (não sensíveis), ou estado de aplicativos.
+    </p>
+
+    <h2>Limitações:</h2>
+    <ul>
+        <li><strong>Segurança:</strong> O <code>localStorage</code> não é seguro para armazenar dados sensíveis como tokens de autenticação.</li>
+        <li><strong>Sincronização:</strong> O <code>localStorage</code> não é sincronizado automaticamente entre diferentes abas ou janelas do navegador.</li>
+    </ul>
+{% endblock %}

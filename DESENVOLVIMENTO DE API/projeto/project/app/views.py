@@ -174,3 +174,32 @@ def FormDeleteView(request, pk):
 
     return render(request, 'forms/form_confirm_delete.html', {'clients': clients})
    
+def FrontEndTemplate(request):
+    return render(request, 'frontend/index.html')
+
+def FrontEnd2Template(request):
+    return render(request, 'frontend/index2.html')
+
+def FrontEnd3Template(request):
+    return render(request, 'frontend/index3.html')
+
+def FeedsNews(request):
+    return render(request, 'frontend/feeds.html')
+
+def FJLocalstorage(request):
+    return render(request, 'javascript/localstorage.html')
+
+def FJSplitpop(request):
+    return render(request, 'javascript/splitpop.html')
+
+def FJNoticiafeed(request):
+    return render(request, 'javascript/noticiafeed.html')
+
+def FJTasks(request):
+    return render(request, 'javascript/tasks.html')
+
+def FJCart(request):
+    return render(request, 'javascript/cart.html')
+
+def Bootstrap(request):
+    return render(request, 'bootstrap/index.html')

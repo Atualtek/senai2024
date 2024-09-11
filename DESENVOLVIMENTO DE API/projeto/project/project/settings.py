@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'api',
+    'cart',
     'rest_framework',
     'rest_framework_simplejwt',
     'drf_yasg',
@@ -177,3 +178,5 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
 }
+
+CART_SESSION_ID = 'cart'

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Carrinho de Compras em Python {% endblock %}
+
+{% block content %}
+
+<h2>Seu carrinho</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+            <th> Ações </th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in cart %}
+        <tr>
+            <td>{{ item.product.name }}</td>
+            <td>{{ item.price }}</td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.total_price }}</td>
+            <td>
+                <a href="{% url 'cart_remove' item.product.id %}">Remover</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="5">O carrinho está vazio.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<p>Total: {{ cart.get_total_price }}</p>
+
+<div class="class container">
+    <div class="class row">
+        <div class="class col-4">
+            <a href="{% url 'cart_add' 1 %}">Adicionar ao primeiro Produto</a> 
+        </div>
+        <div class="class col-4">
+            <a href="{% url 'cart_add' 2 %}">Adicionar ao primeiro Produto</a> 
+        </div>
+        <div class="class col-4">
+            <a href="{% url 'cart_add' 3 %}">Adicionar ao primeiro Produto</a> 
+        </div>
+    </div>
+</div>
+{% endblock %}
