@@ -26,28 +26,23 @@ Route::get('/soma/{a}/{b}', function ($a, $b) {
 
 Route::get('/media/{a}/{b}', function ($a, $b) {
 
-
-
-        for($i = 1; $i <= 10; $i++){
+        /*
+        for($i = 1; $i <= $b; $i++){
 
             $codigo = rand(5, 15);
             echo "o aluo " . $i . " tem o numero sortuado de " . $codigo . "</br>";
 
-        }
+        }*/
 
         
-
-
-
-
         if($a == $b){
             echo "Os valores são iguais </br>";
             echo "Este Aluno está aprovado em: " . date('d/m/Y'). "</br>";
             
         }else if($a < $b) {
             echo "A Média deste aluno é " . $a. " que é menor do que a media da instituição que é  " . $b. ". </br>";
-            echo "Este Aluno está de Recuperação em: " . date('d/m/Y'). "</br>";
-            echo "Este aluno pode fazer " . ($b - $a) . " prova(s) de recuperação </br>";            
+            echo "<br>Este Aluno está de Recuperação em: " . date('d/m/Y'). "</br>";
+            echo "<br>Este aluno pode fazer " . ($b - $a) . " prova(s) de recuperação </br>";            
             for($i = $b; $i > $a; $i--) {                
                 $index = $b - $i +1; 
                 echo $index . " - Esta prova será realizada em até " . $index * 30 . " dias  tendo como data final para realização da prova o dia "  . date('d/m/Y', strtotime('+' . $index * 30 . ' days')) .    " </br>";
@@ -59,16 +54,11 @@ Route::get('/media/{a}/{b}', function ($a, $b) {
         }          
         
      
-        /*
-
-
-         for($i = $b; $i >= $a; $i--) { 
-                $index = $b - $i + 1; 
-                echo $index . " - Esta prova será realizada em até " . $index * 30 . " dias  tendo como data final para realização da prova o dia "  . date('d/m/Y', strtotime('+' . $index * 30 . ' days')) .    " </br>";                     
-            }
+             
 
 
         function adicionarDiasUteis($dataInicial, $diasUteis) {
+            
             $data = strtotime($dataInicial); // Converte a data para timestamp
             $adicionados = 0;
         
@@ -83,9 +73,8 @@ Route::get('/media/{a}/{b}', function ($a, $b) {
             return date('d/m/Y', $data);
         }
         
-        echo "Data atual: " . date('d/m/Y') . "<br>";
-        echo "Data após 30 dias úteis: " . adicionarDiasUteis(date('Y-m-d'), 30);
-        */
+        echo "<br><br>Data atual: " . date('d/m/Y') . "<br>";
+        echo "Data após 30 dias úteis: " . adicionarDiasUteis(date('Y-m-d'), 30);       
 
 });
 
