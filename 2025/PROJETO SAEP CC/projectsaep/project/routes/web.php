@@ -5,13 +5,17 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ClientController;
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/soma/{a}/{b}', function ($a, $b) {
-    $soma = $a + $b;
+    
+    return "A soma de $a e $b é " . somar($a, $b);
 
+
+    /*
     if ($soma >= 18) {
         return "A soma de $a e $b é " . ($a + $b) . " e é maior que 18";
     }else{
@@ -19,12 +23,20 @@ Route::get('/soma/{a}/{b}', function ($a, $b) {
             return "A soma de $a e $b é " . ($a + $b) . " e é menor que 18";
       
     }
+    */
     
 
 
 });
 
+Route::get('/detalhes/{nome}/{idade}', function($nome, $idade) {
+   
+    return response()->json(gerarDetalhes($nome, $idade));
+});
+
 Route::get('/media/{a}/{b}', function ($a, $b) {
+
+        return "a média deste aluno é " . divisao(somar($a,$b) ,3);
 
         /*
         for($i = 1; $i <= $b; $i++){
@@ -91,4 +103,12 @@ Route::resources([
     'client' => ClientController::class,
     
 ]);
+
+Route::get('/infinity/{a}', function ($a) {   
+    $contador = $a;
+    while ($contador <= 5) {
+        echo $contador . " ";
+        $contador++;
+    }
+});
     
